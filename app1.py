@@ -1,11 +1,6 @@
 import pandas as pd
-import os
-import glob
 import streamlit as st
-import xlrd
 from time import sleep
-import numpy as np
-import io
 import base64
 import speech_recognition as sr
 import pyttsx3
