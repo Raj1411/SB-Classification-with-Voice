@@ -7,17 +7,17 @@ import pyttsx3
 
 
 txtdumpfile=open("./text.txt",'a+')
-engine=pyttsx3.init()
+# engine=pyttsx3.init()
 st.write("""# Swiss Beauty Product Classification """)
 startup=st.checkbox('Start')
 voicerate=120
 if startup:
     st.subheader('Bobo is ready to listen...')
     sleep(1)
-    # st.text('Speak now!')
-    engine.setProperty('rate',voicerate)
-    engine.say('Speak Now')
-    engine.runAndWait()
+    st.text('Speak now!')
+#     engine.setProperty('rate',voicerate)
+#     engine.say('Speak Now')
+#     engine.runAndWait()
     listener=sr.Recognizer()
     x = []
     try:
