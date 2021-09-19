@@ -3,7 +3,6 @@ CacheControl
 cachetools
 openpyxl
 pandas
-PyAudio
 pyttsx3
 SpeechRecognition
 streamlit
