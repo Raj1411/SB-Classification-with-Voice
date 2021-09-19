@@ -11,7 +11,7 @@ import speech_recognition as sr
 import pyttsx3
 
 
-txtdumpfile=open("D:\\Projects\\SB classification with speech\\text.txt",'a+')
+txtdumpfile=open("./text.txt",'a+')
 engine=pyttsx3.init()
 st.write("""# Swiss Beauty Product Classification """)
 startup=st.checkbox('Start')
@@ -31,7 +31,7 @@ if startup:
             with st.spinner('Recognizing...'):
                 command=listener.recognize_google(aud)
                 output=command
-                with open("D:\\Projects\\SB classification with speech\\text.txt", "a+") as file_object:
+                with open("./text.txt", "a+") as file_object:
                     file_object.seek(0)
                     data = file_object.read(100)
                     if len(data) > 0 :
@@ -40,8 +40,8 @@ if startup:
                 x.append(output.replace(' ',''))
                 print(x)
 
-            xls = pd.read_excel("D:\Projects\SB classification with speech\words list - Copy.xlsx",index_col=0).to_dict()
-            df=pd.read_excel("D:\Projects\SB classification with speech\Book2 - Copy.xlsx")
+            xls = pd.read_excel("./words list - Copy.xlsx",index_col=0).to_dict()
+            df=pd.read_excel("./Book2 - Copy.xlsx")
             # print(xls)
 
 
