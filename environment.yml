@@ -1,0 +1,12 @@
+name: stats
+dependencies:
+  - base58
+  - CacheControl
+  - cachetools
+  - openpyxl
+  - pandas
+  - pyttsx3
+  - SpeechRecognition
+  - streamlit
+  - pip:
+     - './PyAudio-0.2.11-cp39-cp39-win_amd64.whl'
