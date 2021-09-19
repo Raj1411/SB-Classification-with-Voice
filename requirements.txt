@@ -6,3 +6,4 @@ pandas
 pyttsx3
 SpeechRecognition
 streamlit
+pyaudio==0.2.8
