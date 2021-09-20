@@ -9,6 +9,5 @@ streamlit
 sounddevice
 wavio
 scipy
-pyaudio
 PyAudio
 Wave
