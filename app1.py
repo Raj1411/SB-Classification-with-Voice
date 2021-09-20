@@ -9,7 +9,6 @@ from scipy.io.wavfile import write
 import wavio
 import pyaudio
 import wave
-import sys
 
 
 fs=44100
