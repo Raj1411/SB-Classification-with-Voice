@@ -17,10 +17,9 @@ second=5
 txtdumpfile=open("./text.txt",'a+')
 # engine=pyttsx3.init()
 st.write("""# Swiss Beauty Product Classification """)
-startup=st.checkbox('Start')
 voicerate=120
 listener=sr.Recognizer()
-if startup:
+if st.checkbox('Start'):
     st.subheader('Bobo is ready to listen...')
     sleep(1)
     x = []
