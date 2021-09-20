@@ -18,7 +18,7 @@ txtdumpfile=open("./text.txt",'a+')
 # engine=pyttsx3.init()
 st.write("""# Swiss Beauty Product Classification """)
 startup=st.checkbox('Start')
-my_mic=sr.Microphone(device_index=1)
+my_mic=sr.Microphone(device_index=0)
 voicerate=120
 if startup:
     st.subheader('Bobo is ready to listen...')
