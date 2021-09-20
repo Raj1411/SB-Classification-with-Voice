@@ -13,7 +13,7 @@ import wave
 
 fs=44100
 second=5
-audio=pyaudio.Pyaudio()
+audio=pyaudio.PyAudio()
 stream=audio.open(format=pyaudio.paInt16,channels=1,rate=fs,input=True,frame_per_buffer=10)
 frames=[]
 try:
