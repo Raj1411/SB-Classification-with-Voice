@@ -13,28 +13,12 @@ import wave
 
 fs=44100
 second=5
-audio=pyaudio.PyAudio()
-stream=audio.open(format=pyaudio.paInt16,channels=1,rate=fs,input=True,frame_per_buffer=1024)
-frames=[]
-try:
-    data=stream.read(1024)
-    frames.append(data)
-except:
-    Print('Some Error')
-
-stream.stop_stream()
-stream.close()
-audio.terminate()
-sound_file=wave.open('recorded.wav','wb')
-sound_file.setchannels(1)
-sound_file.setsampwidth(audio.get_sample_size(pyaudio.pyInt16))
-sound_file.setframerate(44100)
-f_file=sound_file.writeframes(b''.join(frames))
 
 txtdumpfile=open("./text.txt",'a+')
 # engine=pyttsx3.init()
 st.write("""# Swiss Beauty Product Classification """)
 startup=st.checkbox('Start')
+my_mic=sr.Microphone(device_index=1)
 voicerate=120
 if startup:
     st.subheader('Bobo is ready to listen...')
@@ -49,7 +33,7 @@ if startup:
     listener=sr.Recognizer()
     x = []
     try:
-        with sr.AudioFile() as source:
+        with my_mic() as source:
             aud=listener.listen(source)
             with st.spinner('Recognizing...'):
                 command=listener.recognize_google(aud)
