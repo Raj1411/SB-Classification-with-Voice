@@ -30,7 +30,7 @@ if startup:
     x = []
     try:
         with sr.Microphone() as source:
-            aud=listener.listen(source)
+            aud=listener.record(source,duration=5)
             with st.spinner('Recognizing...'):
                 command=listener.recognize_google(aud)
                 output=command
