@@ -9,3 +9,5 @@ streamlit
 sounddevice
 wavio
 scipy
+portaudio
+pyaudio
