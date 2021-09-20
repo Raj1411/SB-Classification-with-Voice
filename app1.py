@@ -14,6 +14,7 @@ import wave
 fs=44100
 second=5
 
+x=[]
 txtdumpfile=open("./text.txt",'a+')
 # engine=pyttsx3.init()
 st.write("""# Swiss Beauty Product Classification """)
@@ -21,8 +22,6 @@ voicerate=120
 listener=sr.Recognizer()
 if st.checkbox('Start'):
     st.subheader('Bobo is ready to listen...')
-    sleep(1)
-    x = []
     try:
         with sr.Microphone() as source:
             st.text('Speak now!')
