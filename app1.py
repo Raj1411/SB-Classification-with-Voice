@@ -4,8 +4,13 @@ from time import sleep
 import base64
 import speech_recognition as sr
 import pyttsx3
+import sounddevice
+from scipy.io.wavfile import write
+import wavio
 
 
+fs=44100
+second=5
 txtdumpfile=open("./text.txt",'a+')
 # engine=pyttsx3.init()
 st.write("""# Swiss Beauty Product Classification """)
@@ -18,11 +23,14 @@ if startup:
 #     engine.setProperty('rate',voicerate)
 #     engine.say('Speak Now')
 #     engine.runAndWait()
+    record_voice=sounddevice.rec(int(second*fs),samplerate=fs,channels=2)
+    sounddevice.wait()
+    saved_voice=wavio.write('output.wav',record_voice,fs,sampwidth=2)
     listener=sr.Recognizer()
     x = []
     try:
-        with sr.Microphone() as source:
-            aud=listener.record(source,duration=5)
+        with sr.AudioFile(saved_voice) as source:
+            aud=listener.listen(source)
             with st.spinner('Recognizing...'):
                 command=listener.recognize_google(aud)
                 output=command
