@@ -23,13 +23,13 @@ if startup:
 #     engine.setProperty('rate',voicerate)
 #     engine.say('Speak Now')
 #     engine.runAndWait()
-    record_voice=sounddevice.rec(int(second*fs),samplerate=fs,channels=2)
-    sounddevice.wait()
-    saved_voice=wavio.write('output.wav',record_voice,fs,sampwidth=2)
+#     record_voice=sounddevice.rec(int(second*fs),samplerate=fs,channels=2)
+#     sounddevice.wait()
+#     saved_voice=wavio.write('output.wav',record_voice,fs,sampwidth=2)
     listener=sr.Recognizer()
     x = []
     try:
-        with sr.AudioFile(saved_voice) as source:
+        with sr.Microphone() as source:
             aud=listener.listen(source)
             with st.spinner('Recognizing...'):
                 command=listener.recognize_google(aud)
