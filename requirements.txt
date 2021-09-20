@@ -6,4 +6,6 @@ pandas
 pyttsx3
 SpeechRecognition
 streamlit
-pydub
+sounddevice
+wavio
+scipy
