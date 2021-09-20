@@ -18,7 +18,6 @@ txtdumpfile=open("./text.txt",'a+')
 # engine=pyttsx3.init()
 st.write("""# Swiss Beauty Product Classification """)
 startup=st.checkbox('Start')
-my_mic=sr.Microphone(device_index=0)
 voicerate=120
 if startup:
     st.subheader('Bobo is ready to listen...')
@@ -33,7 +32,7 @@ if startup:
     listener=sr.Recognizer()
     x = []
     try:
-        with my_mic() as source:
+        with sr.Microphone() as source:
             aud=listener.listen(source)
             with st.spinner('Recognizing...'):
                 command=listener.recognize_google(aud)
