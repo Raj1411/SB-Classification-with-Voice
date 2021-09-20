@@ -7,10 +7,30 @@ import pyttsx3
 import sounddevice
 from scipy.io.wavfile import write
 import wavio
+import pyaudio
+import wave
 
 
 fs=44100
 second=5
+audio=pyaudio.Pyaudio()
+stream=audio.open(format=pyaudio.paInt16,channels=1,rate=fs,input=True,frame_per_buffer=10)
+frames=[]
+try:
+    data=stream.read(1024)
+    frames.append(data)
+except:
+    Print('Some Error')
+
+stream.stop_stream()
+stream.close()
+audio.terminate()
+sound_file=wave.open('recorded.wav','wb')
+sound_file.setchannels(1)
+sound_file.setsampwidth(audio.get_sample_size(pyaudio.pyInt16))
+sound_file.setframerate(44100)
+f_file=sound_file.writeframes(b''.join(frames))
+
 txtdumpfile=open("./text.txt",'a+')
 # engine=pyttsx3.init()
 st.write("""# Swiss Beauty Product Classification """)
@@ -29,8 +49,8 @@ if startup:
     listener=sr.Recognizer()
     x = []
     try:
-        with sr.Microphone() as source:
-            aud=listener.record(source,duration=5)
+        with sr.AudioFile() as source:
+            aud=listener.listen(source)
             with st.spinner('Recognizing...'):
                 command=listener.recognize_google(aud)
                 output=command
