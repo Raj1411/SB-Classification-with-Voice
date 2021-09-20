@@ -14,7 +14,7 @@ import wave
 fs=44100
 second=5
 audio=pyaudio.PyAudio()
-stream=audio.open(format=pyaudio.paInt16,channels=1,rate=fs,input=True,frame_per_buffer=10)
+stream=audio.open(format=pyaudio.paInt16,channels=1,rate=fs,input=True,frame_per_buffer=1024)
 frames=[]
 try:
     data=stream.read(1024)
