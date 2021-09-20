@@ -10,3 +10,4 @@ sounddevice
 wavio
 scipy
 pyaudio
+PyAudio
