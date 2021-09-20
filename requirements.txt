@@ -11,4 +11,3 @@ wavio
 scipy
 PyAudio
 Wave
-sys
