@@ -19,16 +19,10 @@ txtdumpfile=open("./text.txt",'a+')
 st.write("""# Swiss Beauty Product Classification """)
 startup=st.checkbox('Start')
 voicerate=120
+listener=sr.Recognizer()
 if startup:
     st.subheader('Bobo is ready to listen...')
     sleep(1)
-#     engine.setProperty('rate',voicerate)
-#     engine.say('Speak Now')
-#     engine.runAndWait()
-#     record_voice=sounddevice.rec(int(second*fs),samplerate=fs,channels=2)
-#     sounddevice.wait()
-#     saved_voice=wavio.write('output.wav',record_voice,fs,sampwidth=2)
-    listener=sr.Recognizer()
     x = []
     try:
         with sr.Microphone() as source:
