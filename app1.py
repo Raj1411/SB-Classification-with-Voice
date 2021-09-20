@@ -22,7 +22,6 @@ voicerate=120
 if startup:
     st.subheader('Bobo is ready to listen...')
     sleep(1)
-    st.text('Speak now!')
 #     engine.setProperty('rate',voicerate)
 #     engine.say('Speak Now')
 #     engine.runAndWait()
@@ -33,6 +32,7 @@ if startup:
     x = []
     try:
         with sr.Microphone() as source:
+            st.text('Speak now!')
             aud=listener.listen(source)
             with st.spinner('Recognizing...'):
                 command=listener.recognize_google(aud)
