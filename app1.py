@@ -2,7 +2,6 @@ import pandas as pd
 import streamlit as st
 from time import sleep
 import base64
-import speech_recognition as sr
 from bokeh.models.widgets import Button
 from bokeh.models import CustomJS
 from streamlit_bokeh_events import streamlit_bokeh_events
