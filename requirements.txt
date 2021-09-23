@@ -3,11 +3,6 @@ CacheControl
 cachetools
 openpyxl
 pandas
-pyttsx3
-SpeechRecognition==3.8.1
 streamlit
-sounddevice
-wavio
-scipy
-PyAudio
-Wave
+bokeh
+streamlit-bokeh-events
