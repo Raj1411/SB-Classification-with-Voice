@@ -13,7 +13,7 @@ txtdumpfile=open("./text.txt",'a+')
 # engine=pyttsx3.init()
 st.write("""# Swiss Beauty Product Classification """)
 voicerate=120
-listener=sr.Recognizer()
+# listener=sr.Recognizer()
 if st.checkbox('Start'):
     st.subheader('Bobo is ready to listen...')
     try:
