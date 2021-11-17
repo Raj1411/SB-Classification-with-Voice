@@ -22,7 +22,7 @@ if st.checkbox('Start'):
         stt_button.js_on_event("button_click", CustomJS(code="""
             var recognition = new webkitSpeechRecognition();
             recognition.continuous = true;
-            recognition.interimResults = true;
+            recognition.interimResults = false;
         
             recognition.onresult = function (e) {
                 var value = "";
