@@ -61,7 +61,7 @@ if st.checkbox('Start'):
                             file_object.write("\n")
                         file_object.write(aud)
                     x.append(aud.replace(' ',''))
-                    print(x)
+                    st.write(x)
 
                 xls = pd.read_excel("./words list - Copy.xlsx",index_col=0).to_dict()
                 df=pd.read_excel("./Book2 - Copy.xlsx")
