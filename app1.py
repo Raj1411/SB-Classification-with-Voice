@@ -49,7 +49,7 @@ if st.checkbox('Start'):
         if result:
             if "GET_TEXT" in result:
                 aud=result.get("GET_TEXT")
-                # print(aud)
+                st.write(aud)
             # st.text('Speak now!')
                 with st.spinner('Recognizing...'):
                     # command=listener.recognize_google(aud)
