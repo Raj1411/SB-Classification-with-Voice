@@ -81,7 +81,7 @@ if st.checkbox('Start'):
                                     for t in az:
                                         if az[1]==xls.get(jj):
                                             xxx.append(az[1])
-                # print(xxx)
+                print(xxx)
 
                 try:
                     result='This Product is:  '+xxx[0]+"     "+'😎'
