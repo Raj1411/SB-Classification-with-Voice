@@ -28,7 +28,7 @@ if st.checkbox('Start'):
                 var value = "";
                 for (var i = e.resultIndex; i < e.results.length; ++i) {
                     if (e.results[i].isFinal) {
-                        value += e.results[i][1].transcript;
+                        value += e.results[i][0].transcript;
                     }
                 }
                 if ( value != "") {
@@ -81,7 +81,7 @@ if st.checkbox('Start'):
                                     for t in az:
                                         if az[1]==xls.get(jj):
                                             xxx.append(az[1])
-                print(xxx)
+                st.write(xxx)
 
                 try:
                     result='This Product is:  '+xxx[0]+"     "+'😎'
