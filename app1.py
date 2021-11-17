@@ -28,7 +28,7 @@ if st.checkbox('Start'):
                 var value = "";
                 for (var i = e.resultIndex; i < e.results.length; ++i) {
                     if (e.results[i].isFinal) {
-                        value += e.results[i][0].transcript;
+                        value += e.results[i][1].transcript;
                     }
                 }
                 if ( value != "") {
